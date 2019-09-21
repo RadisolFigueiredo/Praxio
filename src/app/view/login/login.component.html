@@ -1,36 +1,58 @@
-<div style="border: 1px solid blue">
-  <h1>Login</h1>
-  <!-- <div class="row"> -->
-  <div class="form-group">
-    <input class="form-group" placeholder="E-mail" id="email" type="text" />
-  </div>
-  <!-- </div> -->
-
-  <div class="form-group">
-    <input
-      class="form-control"
-      id="password"
-      placeholder="Password"
-      type="text"
-    />
-  </div>
-
-  <div class="d-flex justify-content-end">
-    <a class="forgot-password" href="#">Forgot password?</a>
-  </div>
+<div>
   <div>
-    <button class="btn btn-login" type="submit" (click)="login()">
-      Login
-    </button>
-  </div>
-  <div>
-    <button
-      class="register"
-      type="button"
-      class="btn btn-link"
-      (click)="register()"
+    <div
+      class="row col-12 d-flex justify-content-center"
+      style="border: 1px solid blue"
     >
-      Don't have an account? Register
-    </button>
+      <div
+        style="border: 1px solid red"
+        class="row d-flex justify-content-center col-12"
+      >
+        <h1 class="row col-4 col-lg-4 p-2" style="border: 1px solid green">
+          Login
+        </h1>
+      </div>
+      <div class="flex-column col-12 col-lg-4">
+        <div
+          style="border: 1px solid red"
+          class="input-group col-12 col-lg-12 mb-3 d-flex justify-content-center"
+        >
+          <input
+            placeholder="E-mail"
+            id="email"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="input-group col-12 col-lg-12 mb-1">
+          <input
+            placeholder="Password"
+            id="password"
+            type="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="d-flex justify-content-end">
+          <a class="forgot-password" href="#">Forgot password?</a>
+        </div>
+        <div>
+          <button class="btn btn-login" type="submit" (click)="login()">
+            Login
+          </button>
+        </div>
+        <div>
+          <button
+            class="register"
+            type="button"
+            class="btn btn-link"
+            (click)="register()"
+          >
+            Don't have an account? Register
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
