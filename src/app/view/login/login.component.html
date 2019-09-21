@@ -1,57 +1,61 @@
-<div>
-  <div>
-    <div
-      class="row col-12 d-flex justify-content-center"
-      style="border: 1px solid blue"
-    >
-      <div
-        style="border: 1px solid red"
-        class="row d-flex justify-content-center col-12"
-      >
-        <h1 class="row col-4 col-lg-4 p-2" style="border: 1px solid green">
+<div
+  style="border: 1px solid red; height: 100vh"
+  class="align-items-center row"
+>
+  <div class="container col-6 w-10" style="border: 1px solid red">
+    <div class="row justify-content-center" style="border: 1px solid blue">
+      <div class="col-6 p-0 mb-2">
+        <h1>
           Login
         </h1>
       </div>
-      <div class="flex-column col-12 col-lg-4">
-        <div
-          style="border: 1px solid red"
-          class="input-group col-12 col-lg-12 mb-3 d-flex justify-content-center"
+    </div>
+    <div class="row justify-content-center">
+      <div class="input-group col-lg-6 p-0 mb-2">
+        <input
+          [(ngModel)]="user.email"
+          placeholder="E-mail"
+          id="email"
+          type="email"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="input-group col-lg-6 p-0">
+        <input
+          [(ngModel)]="user.password"
+          placeholder="Password"
+          id="password"
+          type="password"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 p-0" style="text-align: end;">
+        <a class="forgot-password" href="#">Forgot password?</a>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 p-0 mt-4">
+        <button class="btn btn-login" type="submit" (click)="login()">
+          Login
+        </button>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="">
+        <button
+          class="register col-12 col-lg-6"
+          type="button"
+          class="btn btn-link"
+          (click)="register()"
         >
-          <input
-            placeholder="E-mail"
-            id="email"
-            type="text"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="input-group col-12 col-lg-12 mb-1">
-          <input
-            placeholder="Password"
-            id="password"
-            type="password"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="d-flex justify-content-end">
-          <a class="forgot-password" href="#">Forgot password?</a>
-        </div>
-        <div>
-          <button class="btn btn-login" type="submit" (click)="login()">
-            Login
-          </button>
-        </div>
-        <div>
-          <button
-            class="register"
-            type="button"
-            class="btn btn-link"
-            (click)="register()"
-          >
-            Don't have an account? Register
-          </button>
-        </div>
+          <small>Don't have an account? Register</small>
+        </button>
       </div>
     </div>
   </div>
