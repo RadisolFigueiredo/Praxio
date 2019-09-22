@@ -9,12 +9,12 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
     path: 'home',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     component: HomeComponent,
     data: {
       title: 'home',

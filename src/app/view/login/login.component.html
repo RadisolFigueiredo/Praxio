@@ -1,68 +1,5 @@
-<!-- <div
-  style="height: 100vh"
-  class="align-items-center row"
->
-  <div class="container col-6 w-10">
-    <div class="row justify-content-start">
-      <div class="col-6 col-lg-6 p-0 mb-2">
-        <h1>
-          Login
-        </h1>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="input-group col-lg-6 p-0 mb-2">
-        <input
-          [(ngModel)]="user.email"
-          placeholder="E-mail"
-          id="email"
-          type="email"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="input-group col-lg-6 p-0">
-        <input
-          [(ngModel)]="user.password"
-          placeholder="Password"
-          id="password"
-          type="password"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-6 p-0" style="text-align: end;">
-        <a class="forgot-password" href="#">Forgot password?</a>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-6 p-0 mt-4">
-        <button class="btn btn-login" type="submit" (click)="login()">
-          Login
-        </button>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="">
-        <button
-          class="register col-12 col-lg-6"
-          type="button"
-          class="btn btn-link"
-          (click)="register()"
-        >
-          <small>Don't have an account? Register</small>
-        </button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div style="height: 100vh;" class="container-fluid">
-  <div class="ml-5 mt-2">
+  <div class="mt-2">
     <img
       src="../../../assets/images/img-front-test/front-test-logo.png"
       alt="Logo Teste Praxio"
@@ -70,7 +7,7 @@
   </div>
   <div
     class="row align-items-center justify-content-center"
-    style="height: 80vh;"
+    style="height: 75vh;"
   >
     <div class="col-12 row justify-content-center">
       <div class="col col-4 justify-content-center">
@@ -104,7 +41,7 @@
         </div>
         <div class="row justify-content-center mt-5 mb-2">
           <div class="mx-auto col">
-            <button class="btn btn-login" type="submit">
+            <button class="btn btn-login" type="submit" (click)="login()">
               Login
             </button>
           </div>
