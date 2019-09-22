@@ -5,11 +5,14 @@
       alt="Logo Teste Praxio"
     />
   </div>
-  <div class="row align-items-center justify-content-center" style="height: 83vh;">
+  <div
+    class="row align-items-center justify-content-center"
+    style="height: 83vh;"
+  >
     <div class="col-12 row justify-content-center">
-      <form class="col-8 justify-content-center">
-          <h2 class="col-5 ml-4 mb-5 row justify-content-center">Register</h2>
-          <div class="form-row justify-content-center">
+      <form class="col-8 justify-content-center" [formGroup]="form">
+        <h2 class="col-5 ml-4 mb-5 row justify-content-center">Register</h2>
+        <div class="form-row justify-content-center">
           <div>
             <h3>Personal Information</h3>
             <div class="form-group">
@@ -111,18 +114,19 @@
             </button>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="">
-            <button
-              class="register col-12 col-lg-6"
-              type="button"
-              class="btn btn-link"
-            >
-              <small>Already have an account? Login</small>
-            </button>
-          </div>
-        </div>
       </form>
+      <div class="row col-12 justify-content-center">
+        <div class="">
+          <button
+            class="register col-12 col-lg-6"
+            type="button"
+            class="btn btn-link"
+            (click)="login()"
+          >
+            <small>Already have an account? Login</small>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-12 mt-2 row justify-content-center">
