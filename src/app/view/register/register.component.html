@@ -1,1 +1,125 @@
-<p>register works!</p>
+<div
+  style="width:100%; height: 100vh; border: 1px solid rgb(17, 0, 255)"
+  class="container-fluid"
+>
+  <!-- <div style="border: 1px solid rgb(255, 0, 212)" class="row mx-auto"> -->
+  <div class="col-6 mx-auto p-0" style="border: 1px solid rgb(21, 255, 0)">
+    <h1>Register</h1>
+  </div>
+  <!-- </div> -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row col-6 mx-auto p-0" style="border: 1px solid red">
+      <div class="col" style="border: 1px solid rgb(24, 22, 22)">
+        <h3>Personal Information</h3>
+        <div class="form-group">
+          <input
+            placeholder="Name/Company Name"
+            class="form-control"
+            type="text"
+            formControlName="name"
+            id="name"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <input
+              placeholder="CPF"
+              class="form-control"
+              type="text"
+              formControlName="cpf"
+              id="cpf"
+            />
+          </div>
+          <div class="form-group col">
+            <input
+              placeholder="Telefone"
+              class="form-control"
+              type="text"
+              formControlName="phone"
+              id="phone"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            placeholder="E-mail"
+            class="form-control"
+            type="email"
+            formControlName="email"
+            id="email"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            placeholder="Senha"
+            class="form-control"
+            type="password"
+            formControlName="password"
+            id="password"
+          />
+        </div>
+      </div>
+      <div class="col" style="border: 1px solid rgb(24, 22, 22)">
+        <h3>Address</h3>
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input
+              placeholder="CEP"
+              class="form-control"
+              type="text"
+              formControlName="cep"
+              id="address"
+            />
+          </div>
+          <div class="form-group col">
+            <input
+              placeholder="Public Place"
+              class="form-control"
+              type="text"
+              formControlName="publicPlace"
+              id="publicPlace"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input
+              placeholder="Number"
+              class="form-control"
+              type="text"
+              formControlName="numberAddress"
+              id="numberAddress"
+            />
+          </div>
+          <div class="form-group col">
+            <input
+              placeholder="Neighborhood"
+              class="form-control"
+              type="text"
+              formControlName="neighborhood"
+              id="neighborhood"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="mx-auto mt-5">
+        <button class="btn btn-login" type="submit" >
+          Register
+        </button>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="">
+        <button
+          class="register col-12 col-lg-6"
+          type="button"
+          class="btn btn-link"
+        >
+          <small>Already have an account? Login</small>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
