@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-// import { Http } from '@angular/http';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -13,30 +13,33 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // private http: Http
+    private http: HttpClient,
     ) { }
 
   ngOnInit() {
 
     this.form = this.formBuilder.group({
-      name: [null],
-      cpf: [null],
-      phone: [null],
-      email: [null],
-      password: [null],
-      cep: [null],
-      publicPlace: [null],
-      numberAddress: [null],
-      neighborhood: [null]
+      name: [null, Validators.required],
+      cpf: [null, Validators.required],
+      phone: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(6)]],
+      cep: [null, Validators.required],
+      publicPlace: [null, Validators.required],
+      numberAddress: [null, Validators.required],
+      neighborhood: [null, Validators.required]
     });
   }
 
   onSubmit() {
     console.log(this.form);
 
-    // this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
-    // .map(res => res)
-    // .subscribe(data => console.log(data));
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
+    .subscribe(data => {
+      console.log(data);
+      this.form.reset();
+    },
+    (error: any) => console.log(error));
   }
 
 

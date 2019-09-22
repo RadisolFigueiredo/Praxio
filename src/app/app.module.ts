@@ -8,7 +8,7 @@ import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/register/register.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    // HttpModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

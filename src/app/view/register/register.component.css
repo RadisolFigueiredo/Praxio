@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
+
+* {
+  overflow-y:hidden;
+  overflow-x:hidden;
+
+}
+
+input {
+  border-color: #C2C2C2;
+  color: #CAD0DC;
+  font-family: 'Mukta', sans-serif;
+  font-size: 14px;
+}
+
+h3, h2 {
+  color: #585859;
+}
+
+h2 {
+  font-family: 'Mukta', sans-serif;
+  font-size: 29px;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-register {
+  border-color: #7626FF;
+  background: #7626FF;
+  width: 100%;
+  border-radius: 20px;
+  font-family: 'Mukta', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.btn-link {
+  text-decoration-line: none;
+  color: #0077C5;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+}
+
