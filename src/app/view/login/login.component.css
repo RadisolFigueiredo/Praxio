@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
 
+* {
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
 
-h1 {
+h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 29px;
@@ -26,8 +30,8 @@ input {
 }
 
 .btn-login {
-  border-color: #0077C5;
-  background: #0077C5;
+  border-color: #7626FF;
+  background: #7626FF;
   width: 100%;
   border-radius: 20px;
   font-family: 'Mukta', sans-serif;

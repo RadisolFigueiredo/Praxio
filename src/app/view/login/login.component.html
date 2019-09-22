@@ -1,4 +1,4 @@
-<div
+<!-- <div
   style="height: 100vh"
   class="align-items-center row"
 >
@@ -58,5 +58,71 @@
         </button>
       </div>
     </div>
+  </div>
+</div> -->
+
+<div style="height: 100vh;" class="container-fluid">
+  <div class="ml-5 mt-2">
+    <img
+      src="../../../assets/images/img-front-test/front-test-logo.png"
+      alt="Logo Teste Praxio"
+    />
+  </div>
+  <div
+    class="row align-items-center justify-content-center"
+    style="height: 80vh;"
+  >
+    <div class="col-12 row justify-content-center">
+      <div class="col col-4 justify-content-center">
+        <h2 class=" mb-5 pl-3 row justify-content-start">
+          Login
+        </h2>
+        <div class="form-group">
+          <input
+            [(ngModel)]="user.email"
+            placeholder="E-mail"
+            id="email"
+            type="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            [(ngModel)]="user.password"
+            placeholder="Password"
+            id="password"
+            type="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="row justify-content-end ml-1 col">
+          <div class="col p-0" style="text-align: end;">
+            <small class="forgot-password" href="#">Forgot password?</small>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5 mb-2">
+          <div class="mx-auto col">
+            <button class="btn btn-login" type="submit">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row col-12 justify-content-center">
+        <button
+          class="register col-12 col-lg-6"
+          type="button"
+          class="btn btn-link"
+          (click)="register()"
+        >
+          <small>Don't have an account? Register</small>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 row justify-content-center">
+    <img src="../../../assets/images/img-front-test/bg-front.png" />
   </div>
 </div>
