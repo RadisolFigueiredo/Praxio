@@ -1,18 +1,14 @@
-<div id="register" style="height: 100vh;" class="container-fluid">
-  <div class="mt-2">
-    <img
-      src="../../../assets/images/img-front-test/front-test-logo.png"
-      alt="Logo Teste Praxio"
-    />
-  </div>
+<div id="register" style="max-height: 100vh" class="container-fluid ">
+  <app-nav-deslog class="mt-2"></app-nav-deslog>
+
   <div
-    class="row align-items-start justify-content-center pt-2"
-    style="height: 75vh;"
+    class="row justify-content-center align-items-center"
+    style="height: 80vh"
   >
     <div class="col-12 row justify-content-center">
-      <form class="justify-content-center" [formGroup]="form">
-        <h2 class="col-5 ml-1 mb-5 row justify-content-start">Register</h2>
-        <div class="form-row justify-content-center col-12">
+      <form [formGroup]="form" class="mb-5">
+        <h2 class="col-5 ml-1 mb-3 mt-3 row justify-content-start">Register</h2>
+        <div class="form-row mx-auto col-12">
           <div class="col-12 col-md-6 row-wrap">
             <h3>Personal Information</h3>
             <div class="form-group">
@@ -22,7 +18,6 @@
                 type="text"
                 formControlName="name"
                 id="name"
-                required
                 [ngClass]="{
                   'is-invalid':
                     form.get('name').touched && form.get('name').invalid
@@ -31,14 +26,14 @@
               <div class="invalid-feedback">Name is required</div>
             </div>
             <div class="form-row">
-              <div class="form-group col-12 col-md-6">
+              <div class="form-group col-6 col-lg-6 col-md-6">
                 <input
                   placeholder="CPF"
                   class="form-control"
                   type="text"
                   formControlName="cpf"
                   id="cpf"
-                  required
+                  [textMask]="{ mask: cpfMask }"
                   [ngClass]="{
                     'is-invalid':
                       form.get('cpf').touched && form.get('cpf').invalid
@@ -46,14 +41,14 @@
                 />
                 <div class="invalid-feedback">CPF is required</div>
               </div>
-              <div class="form-group col">
+              <div class="form-group col-6 col-lg-6 col-md-6">
                 <input
                   placeholder="Telefone"
                   class="form-control"
                   type="text"
                   formControlName="phone"
                   id="phone"
-                  required
+                  [textMask]="{ mask: phoneMask }"
                   [ngClass]="{
                     'is-invalid':
                       form.get('phone').touched && form.get('phone').invalid
@@ -69,7 +64,6 @@
                 type="email"
                 formControlName="email"
                 id="email"
-                required
                 [ngClass]="{
                   'is-invalid':
                     form.get('email').touched && form.get('email').invalid
@@ -84,7 +78,6 @@
                 type="password"
                 formControlName="password"
                 id="password"
-                required
                 [ngClass]="{
                   'is-invalid':
                     form.get('password').touched && form.get('password').invalid
@@ -93,17 +86,18 @@
               <div class="invalid-feedback">Password is required</div>
             </div>
           </div>
-          <div class="pl-2 col-6">
+          <div class="col-12 col-md-6 row-wrap">
             <h3>Address</h3>
             <div class="form-row">
-              <div class="form-group col-4">
+              <div class="form-group col-4 col-lg-4 col-md-4">
                 <input
                   placeholder="CEP"
                   class="form-control"
                   type="text"
                   formControlName="cep"
+                  appNumbersOnly
+                  maxlength="8"
                   id="cep"
-                  required
                   [ngClass]="{
                     'is-invalid':
                       form.get('cep').touched && form.get('cep').invalid
@@ -111,14 +105,13 @@
                 />
                 <div class="invalid-feedback">Cep is required</div>
               </div>
-              <div class="form-group col">
+              <div class="form-group col-8 col-lg-7 col-md-7">
                 <input
                   placeholder="Public Place"
                   class="form-control"
                   type="text"
                   formControlName="publicPlace"
-                  id="publicPlace"
-                  required
+                  id="street"
                   [ngClass]="{
                     'is-invalid':
                       form.get('publicPlace').touched &&
@@ -128,30 +121,31 @@
                 <div class="invalid-feedback">Public Place is required</div>
               </div>
             </div>
+            <div class="w-100"></div>
             <div class="form-row">
-              <div class="form-group col-4">
+              <div class="form-group col-4 col-lg-4 col-md-4">
                 <input
                   placeholder="Number"
                   class="form-control"
                   type="text"
-                  formControlName="numberAddress"
-                  id="numberAddress"
-                  required
+                  formControlName="number"
+                  id="number"
+                  appNumbersOnly
+                  maxlength="6"
                   [ngClass]="{
                     'is-invalid':
-                      form.get('numberAddress').touched &&
-                      form.get('numberAddress').invalid
+                      form.get('number').touched && form.get('number').invalid
                   }"
                 />
                 <div class="invalid-feedback">Number is required</div>
               </div>
-              <div class="form-group col">
+              <div class="form-group col-8 col-lg-7 col-md-7">
                 <input
                   placeholder="Neighborhood"
                   class="form-control"
                   type="text"
                   formControlName="neighborhood"
-                  id="neighborhood"
+                  id="district"
                   required
                   [ngClass]="{
                     'is-invalid':
@@ -171,24 +165,19 @@
             </button>
           </div>
         </div>
-      </form>
-      <div class="row col-12 justify-content-center">
-        <div>
-          <button
-            class="register col-12 col-lg-6 btn btn-link"
-            type="button"
-            (click)="login()"
-          >
-            <small>Already have an account? Login</small>
-          </button>
+        <div class="row col-12 justify-content-center">
+          <div>
+            <button
+              class="register col-12 col-lg-6 btn btn-link"
+              type="button"
+              (click)="login()"
+            >
+              <small>Already have an account? Login</small>
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-  <div class="col-12 row justify-content-center">
-    <img
-      class="img-botton "
-      src="../../../assets/images/img-front-test/bg-front.png"
-    />
-  </div>
+  <app-footer-deslog></app-footer-deslog>
 </div>

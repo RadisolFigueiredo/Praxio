@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { IUser } from './user';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private toastr: ToastrService,
     private authService: AuthService,
   ) {}
 
@@ -21,6 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.toastr.success(
+      'Login realizado com sucesso!'
+    );
     this.router.navigate(['/home']);
     console.log(this.user);
   }

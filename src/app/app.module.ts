@@ -10,6 +10,13 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './view/logout/logout.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TextMaskModule } from 'angular2-text-mask';
+import { CepService } from './services/cep/cep.service';
+import { SharedModule } from './shared/shared.module';
+import { FooterDeslogComponent } from './view/footer/footer-deslog/footer-deslog.component';
+import { NavDeslogComponent } from './view/nav/nav-deslog/nav-deslog.component';
 
 @NgModule({
   declarations: [
@@ -17,16 +24,23 @@ import { LogoutComponent } from './view/logout/logout.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    FooterDeslogComponent,
+    NavDeslogComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TextMaskModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    ToastrModule.forRoot()
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, CepService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
