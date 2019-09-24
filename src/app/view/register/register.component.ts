@@ -5,9 +5,6 @@ import { Router } from '@angular/router';
 import { LogoutComponent } from '../logout/logout.component';
 import { ToastrService } from 'ngx-toastr';
 import { MaskService } from '../../services/mask.service';
-import { Cep } from '../../services/cep/cep';
-import { CepService } from '../../services/cep/cep.service';
-
 
 
 @Component({
@@ -26,8 +23,6 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    private cepService: CepService
-
   ) { }
 
   ngOnInit() {
@@ -70,48 +65,13 @@ export class RegisterComponent implements OnInit {
         if (controlErrors != null) {
           Object.keys(controlErrors).forEach((keyError) => {
             this.toastr.error(
-              'Campos Obrigatórios'
-              // this.translate.instant('fields.' + key),
-              // this.translate.instant('errors.' + keyError)
+              (key + ' são obrigatórios')
             );
           });
         }
       }
     });
   }
-
-  // searchAddress() {
-  //   // if (event.target.value && event.target.value.length === 8)
-  //   //   this.cepService
-  //   //     .searchAddressByPostalCode(event.target.value)
-  //   //     .subscribe((response) => this.populateForm(response));
-
-  //   const cep = this.form.get('address.cep').value;
-
-  //   if(cep != null && cep !== '') {
-  //     this.cepService.searchAddressByPostalCode(cep)
-  //     .subscribe(dados => this.populateForm(dados));
-  //   }
-  // }
-
-  // populateForm(dados) {
-  //   // this.foundPostalCode = true;
-  //   this.form.patchValue({
-  //     address: {
-  //       publicPlace: dados.publicPlace,
-  //       neighborhood: dados.neighborhood
-  //     }
-  //   }, { onlySelf: true });
-  // }
-
-  // resetDadosForm() {
-  //   this.form.patchValue({
-  //     address: {
-  //       publicPlace: null,
-  //       neighborhood: null,
-  //     }
-  //   });
-  // }
 
 }
 

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
+
+.nav-home {
+  position: fixed;
+  z-index: 1;
+}
+
+button {
+  background-color: #FFFFFF;
+  color: #585859;
+  border-color: #EAEAEC;
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  border-radius: 32px;
+}
+
+

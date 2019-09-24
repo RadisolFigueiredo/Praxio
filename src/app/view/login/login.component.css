@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
 
-#login{
-  overflow-y:hidden;
-  overflow-x:hidden;
+#login {
+  max-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.body {
+  height: 80vh;
 }
 
 h2 {
@@ -18,6 +23,10 @@ input {
   font-size: 14px;
   color: #CAD0DC;
   border-color: #C2C2C2;
+}
+
+.align-small {
+  text-align: end;
 }
 
 .forgot-password {
@@ -38,6 +47,10 @@ input {
   font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
+}
+
+.align {
+  text-align: center;
 }
 
 .register {

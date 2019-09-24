@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
 
 #register {
+  max-height: 100vh;
   overflow-y:hidden;
   overflow-x:hidden;
+}
+
+.body {
+  height: 80vh;
 }
 
 input {
@@ -42,6 +47,12 @@ h3 {
 
 .btn-link {
   text-decoration-line: none;
+  color: #0077C5;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+}
+
+small {
   color: #0077C5;
   font-family: 'Mukta', sans-serif;
   font-size: 16px;

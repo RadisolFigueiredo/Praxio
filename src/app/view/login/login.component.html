@@ -1,16 +1,15 @@
-<div style="max-height: 100vh;" class="container-fluid" id="login">
+<div class="container-fluid" id="login">
   <app-nav-deslog class="mt-2"></app-nav-deslog>
   <div
-    class="row align-items-center justify-content-center"
-    style="height: 80vh;"
+    class="body row align-items-center justify-content-center"
   >
     <div class="col-12 col-lg-12 col-md-12 row justify-content-center">
       <div class="col-12 col-lg-8 col-md-8">
         <h2 class="mx-auto col-12 col-lg-8 col-md-8 mb-3 ">
-          Login
+          Entrar
         </h2>
 
-        <div class="input-group mx-auto col-12 col-lg-8 col-md-8">
+        <div class="input-group mx-auto col-12 col-lg-8 col-md-8 mb-2">
           <input
             [(ngModel)]="user.email"
             placeholder="E-mail"
@@ -26,7 +25,7 @@
         <div class="input-group mx-auto col-12 col-lg-8 col-md-8">
           <input
             [(ngModel)]="user.password"
-            placeholder="Password"
+            placeholder="Senha"
             id="password"
             type="password"
             class="form-control"
@@ -41,29 +40,29 @@
             ></span>
           </div>
         </div>
-        <div style="text-align: end" class="mx-auto col-12 col-lg-8 col-md-8">
-          <small class="forgot-password" href="#">Forgot password?</small>
+        <div class="align-small mx-auto col-12 col-lg-8 col-md-8 mb-4">
+          <small class="forgot-password" href="#">ESQUECEU A SENHA?</small>
         </div>
         <div
           class="mx-auto col-12 col-lg-8 col-md-8 mt-3 mb-2"
           (click)="login()"
         >
           <button class="btn btn-login" type="submit">
-            Login
+            Entrar
           </button>
         </div>
-        <div class="row col-12 col-lg-8 col-md-8 justify-content-center">
+        <div class="align col-12 col-lg-8 col-md-8 mx-auto">
           <button
-            class="register"
+            class="col-12 col-lg-8 col-md-8"
             type="button"
             class="btn btn-link"
             (click)="register()"
           >
-            <small>Don't have an account? Register</small>
+            <small class="register">Não tem uma conta? Cadastre-se</small>
           </button>
         </div>
       </div>
     </div>
-    <app-footer-deslog></app-footer-deslog>
   </div>
+  <app-footer-deslog></app-footer-deslog>
 </div>

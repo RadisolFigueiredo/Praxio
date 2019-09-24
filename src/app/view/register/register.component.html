@@ -1,19 +1,18 @@
-<div id="register" style="max-height: 100vh" class="container-fluid ">
+<div id="register" class="container-fluid ">
   <app-nav-deslog class="mt-2"></app-nav-deslog>
 
-  <div
-    class="row justify-content-center align-items-center"
-    style="height: 80vh"
-  >
+  <div class="body row justify-content-center align-items-center">
     <div class="col-12 row justify-content-center">
       <form [formGroup]="form" class="mb-5">
-        <h2 class="col-5 ml-1 mb-3 mt-3 row justify-content-start">Register</h2>
+        <h2 class="col-5 ml-1 mb-3 mt-3 row justify-content-start">
+          Cadastrar
+        </h2>
         <div class="form-row mx-auto col-12">
           <div class="col-12 col-md-6 row-wrap">
-            <h3>Personal Information</h3>
+            <h3>Informações Pessoais</h3>
             <div class="form-group">
               <input
-                placeholder="Name/Company Name"
+                placeholder="Nome / Razão Social"
                 class="form-control"
                 type="text"
                 formControlName="name"
@@ -23,7 +22,7 @@
                     form.get('name').touched && form.get('name').invalid
                 }"
               />
-              <div class="invalid-feedback">Name is required</div>
+              <div class="invalid-feedback">Nome obrigatório</div>
             </div>
             <div class="form-row">
               <div class="form-group col-6 col-lg-6 col-md-6">
@@ -39,7 +38,7 @@
                       form.get('cpf').touched && form.get('cpf').invalid
                   }"
                 />
-                <div class="invalid-feedback">CPF is required</div>
+                <div class="invalid-feedback">CPF obrigatório</div>
               </div>
               <div class="form-group col-6 col-lg-6 col-md-6">
                 <input
@@ -54,7 +53,7 @@
                       form.get('phone').touched && form.get('phone').invalid
                   }"
                 />
-                <div class="invalid-feedback">Phone is required</div>
+                <div class="invalid-feedback">Telefone obrigatório</div>
               </div>
             </div>
             <div class="form-group">
@@ -69,9 +68,9 @@
                     form.get('email').touched && form.get('email').invalid
                 }"
               />
-              <div class="invalid-feedback">E-mail is required</div>
+              <div class="invalid-feedback">E-mail iobrigatório</div>
             </div>
-            <div class="form-group">
+            <div class="form-group input-group">
               <input
                 placeholder="Senha"
                 class="form-control"
@@ -83,11 +82,20 @@
                     form.get('password').touched && form.get('password').invalid
                 }"
               />
-              <div class="invalid-feedback">Password is required</div>
+              <div class="invalid-feedback">Senha Obrigatória</div>
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i
+                    appShowPassword
+                    elementId="password"
+                    class="fas fa-eye-slash"
+                  ></i
+                ></span>
+              </div>
             </div>
           </div>
           <div class="col-12 col-md-6 row-wrap">
-            <h3>Address</h3>
+            <h3>Endereço</h3>
             <div class="form-row">
               <div class="form-group col-4 col-lg-4 col-md-4">
                 <input
@@ -103,11 +111,11 @@
                       form.get('cep').touched && form.get('cep').invalid
                   }"
                 />
-                <div class="invalid-feedback">Cep is required</div>
+                <div class="invalid-feedback">Cep obrigatório</div>
               </div>
               <div class="form-group col-8 col-lg-7 col-md-7">
                 <input
-                  placeholder="Public Place"
+                  placeholder="Logradouro"
                   class="form-control"
                   type="text"
                   formControlName="publicPlace"
@@ -118,14 +126,14 @@
                       form.get('publicPlace').invalid
                   }"
                 />
-                <div class="invalid-feedback">Public Place is required</div>
+                <div class="invalid-feedback">Logradouro obrigatório</div>
               </div>
             </div>
             <div class="w-100"></div>
             <div class="form-row">
               <div class="form-group col-4 col-lg-4 col-md-4">
                 <input
-                  placeholder="Number"
+                  placeholder="Número"
                   class="form-control"
                   type="text"
                   formControlName="number"
@@ -137,11 +145,11 @@
                       form.get('number').touched && form.get('number').invalid
                   }"
                 />
-                <div class="invalid-feedback">Number is required</div>
+                <div class="invalid-feedback">Número obrigatório</div>
               </div>
               <div class="form-group col-8 col-lg-7 col-md-7">
                 <input
-                  placeholder="Neighborhood"
+                  placeholder="Bairro"
                   class="form-control"
                   type="text"
                   formControlName="neighborhood"
@@ -153,7 +161,7 @@
                       form.get('neighborhood').invalid
                   }"
                 />
-                <div class="invalid-feedback">Neighborhood is required</div>
+                <div class="invalid-feedback">Bairro obrigatório</div>
               </div>
             </div>
           </div>
@@ -161,18 +169,18 @@
         <div class="row justify-content-center mt-3">
           <div class="mx-auto col-6">
             <button class="btn btn-register" type="submit" (click)="register()">
-              Register
+              Cadastrar
             </button>
           </div>
         </div>
         <div class="row col-12 justify-content-center">
           <div>
             <button
-              class="register col-12 col-lg-6 btn btn-link"
+              class="col-12 col-lg-6 btn btn-link"
               type="button"
               (click)="login()"
             >
-              <small>Already have an account? Login</small>
+              <small>Já tem uma conta? Faça login</small>
             </button>
           </div>
         </div>
