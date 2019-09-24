@@ -17,10 +17,10 @@ export class ShowPasswordDirective {
     this._shown = !this._shown;
     if (this._shown) {
       passwordInput.setAttribute('type', 'text');
-      span.className = 'fas fa-eye-slash';
+      span.className = 'fas fa-eye';
     } else {
       passwordInput.setAttribute('type', 'password');
-      span.className = 'fas fa-eye';
+      span.className = 'fas fa-eye-slash';
     }
   }
   setup() {

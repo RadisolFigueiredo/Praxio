@@ -17,6 +17,7 @@ import { CepService } from './services/cep/cep.service';
 import { SharedModule } from './shared/shared.module';
 import { FooterDeslogComponent } from './view/footer/footer-deslog/footer-deslog.component';
 import { NavDeslogComponent } from './view/nav/nav-deslog/nav-deslog.component';
+import { NavHomeComponent } from './view/nav/nav-home/nav-home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavDeslogComponent } from './view/nav/nav-deslog/nav-deslog.component';
     RegisterComponent,
     LogoutComponent,
     FooterDeslogComponent,
-    NavDeslogComponent
+    NavDeslogComponent,
+    NavHomeComponent
   ],
   imports: [
     FormsModule,
