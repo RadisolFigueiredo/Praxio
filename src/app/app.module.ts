@@ -9,13 +9,15 @@ import { RegisterComponent } from './view/register/register.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from './view/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     FormsModule,

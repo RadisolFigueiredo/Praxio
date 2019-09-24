@@ -10,13 +10,14 @@ export class AuthService {
 
   private userAthenticated: boolean = false;
 
+  // email = "/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\."
   constructor(
     private router: Router,
     // private http: HttpClient
   ) {}
 
   login(user: IUser) {
-    if(user.email === 'user@email.com' && user.password === '123456') {
+    if(user.email !== ''  && user.password !== '') {
       this.userAthenticated = true;
       this.router.navigate(['/home']);
       console.log(this.userAthenticated);

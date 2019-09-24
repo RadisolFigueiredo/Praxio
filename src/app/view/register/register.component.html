@@ -1,4 +1,4 @@
-<div style="height: 100vh;" class="container-fluid">
+<div id="register" style="height: 100vh;" class="container-fluid">
   <div class="mt-2">
     <img
       src="../../../assets/images/img-front-test/front-test-logo.png"
@@ -10,10 +10,10 @@
     style="height: 75vh;"
   >
     <div class="col-12 row justify-content-center">
-      <form class="col-8 justify-content-center" [formGroup]="form">
+      <form class="justify-content-center" [formGroup]="form">
         <h2 class="col-5 ml-1 mb-5 row justify-content-start">Register</h2>
         <div class="form-row justify-content-center col-12">
-          <div class="col-6 row-wrap">
+          <div class="col-12 col-md-6 row-wrap">
             <h3>Personal Information</h3>
             <div class="form-group">
               <input
@@ -22,17 +22,29 @@
                 type="text"
                 formControlName="name"
                 id="name"
+                required
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('name').touched && form.get('name').invalid
+                }"
               />
+              <div class="invalid-feedback">Name is required</div>
             </div>
             <div class="form-row">
-              <div class="form-group col">
+              <div class="form-group col-12 col-md-6">
                 <input
                   placeholder="CPF"
                   class="form-control"
                   type="text"
                   formControlName="cpf"
                   id="cpf"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('cpf').touched && form.get('cpf').invalid
+                  }"
                 />
+                <div class="invalid-feedback">CPF is required</div>
               </div>
               <div class="form-group col">
                 <input
@@ -41,7 +53,13 @@
                   type="text"
                   formControlName="phone"
                   id="phone"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('phone').touched && form.get('phone').invalid
+                  }"
                 />
+                <div class="invalid-feedback">Phone is required</div>
               </div>
             </div>
             <div class="form-group">
@@ -51,7 +69,13 @@
                 type="email"
                 formControlName="email"
                 id="email"
+                required
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('email').touched && form.get('email').invalid
+                }"
               />
+              <div class="invalid-feedback">E-mail is required</div>
             </div>
             <div class="form-group">
               <input
@@ -60,7 +84,13 @@
                 type="password"
                 formControlName="password"
                 id="password"
+                required
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('password').touched && form.get('password').invalid
+                }"
               />
+              <div class="invalid-feedback">Password is required</div>
             </div>
           </div>
           <div class="pl-2 col-6">
@@ -72,8 +102,14 @@
                   class="form-control"
                   type="text"
                   formControlName="cep"
-                  id="address"
+                  id="cep"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('cep').touched && form.get('cep').invalid
+                  }"
                 />
+                <div class="invalid-feedback">Cep is required</div>
               </div>
               <div class="form-group col">
                 <input
@@ -82,7 +118,14 @@
                   type="text"
                   formControlName="publicPlace"
                   id="publicPlace"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('publicPlace').touched &&
+                      form.get('publicPlace').invalid
+                  }"
                 />
+                <div class="invalid-feedback">Public Place is required</div>
               </div>
             </div>
             <div class="form-row">
@@ -93,7 +136,14 @@
                   type="text"
                   formControlName="numberAddress"
                   id="numberAddress"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('numberAddress').touched &&
+                      form.get('numberAddress').invalid
+                  }"
                 />
+                <div class="invalid-feedback">Number is required</div>
               </div>
               <div class="form-group col">
                 <input
@@ -102,14 +152,21 @@
                   type="text"
                   formControlName="neighborhood"
                   id="neighborhood"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('neighborhood').touched &&
+                      form.get('neighborhood').invalid
+                  }"
                 />
+                <div class="invalid-feedback">Neighborhood is required</div>
               </div>
             </div>
           </div>
         </div>
         <div class="row justify-content-center mt-3">
           <div class="mx-auto col-6">
-            <button class="btn btn-register" type="submit">
+            <button class="btn btn-register" type="submit" (click)="register()">
               Register
             </button>
           </div>
@@ -118,9 +175,8 @@
       <div class="row col-12 justify-content-center">
         <div>
           <button
-            class="register col-12 col-lg-6"
+            class="register col-12 col-lg-6 btn btn-link"
             type="button"
-            class="btn btn-link"
             (click)="login()"
           >
             <small>Already have an account? Login</small>

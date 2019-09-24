@@ -1,15 +1,20 @@
-<div class="container-fluid" style="height: 100vh;">
-  <div class="col-12 row justify-content-between" style="position: fixed">
-    <div class="ml-5 mt-2">
-      <img
-        src="../../../assets/images/img-front-test/front-test-logo.png"
-        alt="Logo Teste Praxio"
-      />
-    </div>
-    <div class="row pr-5 align-items-center">
-      <button type="button" class="btn btn-light">Logout</button>
-    </div>
+<div
+  class="col-12 row justify-content-between"
+  style="position: fixed; z-index: 1;"
+>
+  <div class="ml-5 mt-2">
+    <img
+      src="../../../assets/images/img-front-test/front-test-logo.png"
+      alt="Logo Teste Praxio"
+    />
   </div>
+  <div class="row pr-5 align-items-center">
+    <button type="button" class="btn btn-light" (click)="login()">
+      Logout
+    </button>
+  </div>
+</div>
+<div>
   <div class="col-12 m-0 row justify-content-center align-items-start">
     <img
       class="img-center"

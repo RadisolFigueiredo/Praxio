@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
 
@@ -33,20 +34,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.form);
-
-    this.http.post('https://httpbin.org/post', JSON.stringify(this.form.value))
-    .subscribe(data => {
-      console.log(data);
-      this.form.reset();
-    },
-    (error: any) => console.log(error));
-  }
-
   login() {
     this.router.navigate(['/login']);
   }
 
+  register() {
+    if (this.form.valid) {
+      return this.router.navigate(['/login']);
+    }
+  }
 
 }
+
+
+
+
+
+
