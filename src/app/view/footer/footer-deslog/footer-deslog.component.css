@@ -1,0 +1,10 @@
+footer {
+  height: 20vh;
+}
+
+img {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+}

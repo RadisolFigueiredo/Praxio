@@ -1,0 +1,197 @@
+<div id="register" class="container-fluid ">
+  <app-nav-deslog class="mt-2"></app-nav-deslog>
+
+  <div class="body row justify-content-center align-items-center">
+    <div class="col-12 row justify-content-center">
+      <form [formGroup]="form" class="mb-5">
+        <h2 class="col-5 ml-1 mb-3 mt-3 row justify-content-start">
+          Cadastrar
+        </h2>
+        <div class="form-row mx-auto col-12">
+          <div class="col-12 col-md-6 row-wrap">
+            <h3>Informações Pessoais</h3>
+            <div class="form-group">
+              <input
+                placeholder="Nome / Razão Social"
+                class="form-control"
+                type="text"
+                formControlName="name"
+                maxlength="30"
+                id="name"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('name').touched && form.get('name').invalid
+                }"
+              />
+              <div class="invalid-feedback">
+                Nome / Razão Social Obrigatório
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6 col-lg-6 col-md-6">
+                <input
+                  placeholder="CPF"
+                  class="form-control"
+                  type="text"
+                  formControlName="cpf"
+                  id="cpf"
+                  [textMask]="{ mask: cpfMask }"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('cpf').touched && form.get('cpf').invalid
+                  }"
+                />
+                <div class="invalid-feedback">CPF Obrigatório</div>
+              </div>
+              <div class="form-group col-6 col-lg-6 col-md-6">
+                <input
+                  placeholder="Telefone"
+                  class="form-control"
+                  type="text"
+                  formControlName="phone"
+                  id="phone"
+                  [textMask]="{ mask: phoneMask }"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('phone').touched && form.get('phone').invalid
+                  }"
+                />
+                <div class="invalid-feedback">Telefone Obrigatório</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                placeholder="E-mail"
+                class="form-control"
+                type="email"
+                formControlName="email"
+                id="email"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('email').touched && form.get('email').invalid
+                }"
+              />
+              <div class="invalid-feedback">E-mail Obrigatório</div>
+            </div>
+            <div class="form-group input-group">
+              <input
+                placeholder="Senha"
+                class="form-control"
+                type="password"
+                formControlName="password"
+                id="password"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('password').touched && form.get('password').invalid
+                }"
+              />
+              <div class="invalid-feedback">Senha Obrigatória</div>
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i
+                    appShowPassword
+                    elementId="password"
+                    class="fas fa-eye-slash"
+                  ></i
+                ></span>
+              </div>
+            </div>
+            <small class="ajuste">* Mínimo 6 dígitos</small>
+          </div>
+          <div class="col-12 col-md-6 row-wrap">
+            <h3>Endereço</h3>
+            <div class="form-row">
+              <div class="form-group col-4 col-lg-4 col-md-4">
+                <input
+                  placeholder="CEP"
+                  class="form-control"
+                  type="text"
+                  formControlName="cep"
+                  appNumbersOnly
+                  (blur)="searchAddress($event)"
+                  id="cep"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('cep').touched && form.get('cep').invalid
+                  }"
+                />
+                <div class="invalid-feedback">Cep obrigatório</div>
+              </div>
+              <div class="form-group col-8 col-lg-7 col-md-7">
+                <input
+                  placeholder="Logradouro"
+                  class="form-control"
+                  type="text"
+                  formControlName="publicPlace"
+                  id="street"
+                  [disabled]="foundPostalCode"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('publicPlace').touched &&
+                      form.get('publicPlace').invalid
+                  }"
+                />
+                <div class="invalid-feedback">Logradouro obrigatório</div>
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="form-row">
+              <div class="form-group col-4 col-lg-4 col-md-4">
+                <input
+                  placeholder="Número"
+                  class="form-control"
+                  type="text"
+                  formControlName="number"
+                  id="number"
+                  appNumbersOnly
+                  maxlength="6"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('number').touched && form.get('number').invalid
+                  }"
+                />
+                <div class="invalid-feedback">Número obrigatório</div>
+              </div>
+              <div class="form-group col-8 col-lg-7 col-md-7">
+                <input
+                  placeholder="Bairro"
+                  class="form-control"
+                  type="text"
+                  formControlName="neighborhood"
+                  id="district"
+                  required
+                  [disabled]="foundPostalCode"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('neighborhood').touched &&
+                      form.get('neighborhood').invalid
+                  }"
+                />
+                <div class="invalid-feedback">Bairro obrigatório</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="mx-auto col-6">
+            <button class="btn btn-register" type="submit" (click)="register()">
+              Cadastrar
+            </button>
+          </div>
+        </div>
+        <div class="row col-12 justify-content-center">
+          <div>
+            <button
+              class="col-12 col-lg-6 btn btn-link"
+              type="button"
+              (click)="login()"
+            >
+              <small>Já tem uma conta? Faça login</small>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-footer-deslog></app-footer-deslog>
+</div>

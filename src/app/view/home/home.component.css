@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
+
+button {
+  border-radius: 20px;
+  border-color: #FFFFFF;
+  font-size: 16px;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+p {
+  color: #FFFFFF;
+  font-family: 'Mukta', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bg-front {
+  margin-top: -50px;
+  position: absolute;
+}
+
+.front-test {
+  margin-top: 13%;
+}
+
+.align-p {
+  text-align: center;
+
+}
