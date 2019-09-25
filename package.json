@@ -14,7 +14,6 @@
     "./node_modules/bootstrap/dist/css/bootstrap.min.css",
     "styles.css",
     "node_modules/ngx-toastr/toastr.css"
-
   ],
   "dependencies": {
     "@angular/animations": "^8.2.7",

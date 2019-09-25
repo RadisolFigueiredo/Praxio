@@ -32,7 +32,8 @@ li {
   object-fit: contain;
 }
 
-a {
+span {
   text-decoration: none;
   color: #707070;
+  cursor: pointer;
 }

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LogoutComponent } from '../logout/logout.component';
 import { ToastrService } from 'ngx-toastr';
 import { MaskService } from '../../services/mask.service';
+import { CepService } from '../../services/cep/cep.service';
 
 
 @Component({
@@ -15,11 +16,13 @@ import { MaskService } from '../../services/mask.service';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  foundPostalCode = false;
 
   public cpfMask = MaskService.cpfMask;
   public phoneMask = MaskService.phoneMask;
 
   constructor(
+    private cepService: CepService,
     private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
@@ -33,10 +36,10 @@ export class RegisterComponent implements OnInit {
       phone: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]],
-      cep: [null, Validators.required],
-      publicPlace: [null, Validators.required],
-      number: [null, Validators.required],
-      neighborhood: [null, Validators.required]
+      cep: [''],
+      publicPlace: [''],
+      number: [''],
+      neighborhood: ['']
     });
   }
 
@@ -55,6 +58,21 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  searchAddress(event: any) {
+    if (event.target.value && event.target.value.length === 8)
+      this.cepService
+        .searchAddressByPostalCode(event.target.value)
+        .subscribe((response) => this.populateForm(response));
+  }
+
+  populateForm(model: any) {
+    this.foundPostalCode = true;
+    this.form.patchValue({
+      publicPlace: model.logradouro,
+      neighborhood: model.bairro,
+    }, { onlySelf: true });
+  }
+
   showFormErrors(group: FormGroup) {
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.controls[key];
@@ -65,14 +83,13 @@ export class RegisterComponent implements OnInit {
         if (controlErrors != null) {
           Object.keys(controlErrors).forEach((keyError) => {
             this.toastr.error(
-              (key + ' são obrigatórios')
-            );
+              (key + ' é obrigatório')
+              );
           });
         }
       }
     });
   }
-
 }
 
 
