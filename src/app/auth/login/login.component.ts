@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  user: IUser = { email: '', password: '', rememberMe: false };
+  user: IUser = { email: '', senha: '', rememberMe: false };
 
   constructor(
     private router: Router,
@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
       'Login realizado com sucesso!'
     );
     this.router.navigate(['/home']);
-    console.log(this.user);
   }
 
   register() {

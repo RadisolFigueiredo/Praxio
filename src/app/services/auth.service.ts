@@ -1,4 +1,4 @@
-import { IUser } from './../view/login/user';
+import { IUser } from '../auth/login/user';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 // import { HttpClient } from '@angular/common/http';
@@ -17,10 +17,9 @@ export class AuthService {
   ) {}
 
   login(user: IUser) {
-    if(user.email !== ''  && user.password !== '') {
+    if(user.email !== ''  && user.senha !== '') {
       this.userAthenticated = true;
       this.router.navigate(['/home']);
-      console.log(this.userAthenticated);
     } else {
       this.userAthenticated = false;
     }

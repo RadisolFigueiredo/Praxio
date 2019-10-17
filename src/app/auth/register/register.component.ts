@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidationErrors, FormArray } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LogoutComponent } from '../logout/logout.component';
+import { LogoutComponent } from '../../view/logout/logout.component';
 import { ToastrService } from 'ngx-toastr';
 import { MaskService } from '../../services/mask.service';
 import { CepService } from '../../services/cep/cep.service';
